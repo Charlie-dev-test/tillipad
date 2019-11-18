@@ -21,9 +21,10 @@ class SiteController extends Controller
     {
         return [
             [
+                // Кэшируем страницу для actionIndex
                 'class' => 'yii\filters\PageCache',
                 'only' => ['index'],
-                'duration' => 60,
+                'duration' => 3600,
             ],
             'access' => [
                 'class' => AccessControl::className(),
@@ -75,6 +76,11 @@ class SiteController extends Controller
 
     }
 
+    /**
+     * Displays result of ajax request.
+     *
+     * @return string
+     */
     public function actionAjax(){
         if(Yii::$app->request->isAjax) {
             $id = (int)(Yii::$app->request->post('id'));
@@ -146,7 +152,6 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-        Yii::$app->cache->flush();
         return $this->render('about');
     }
 }
