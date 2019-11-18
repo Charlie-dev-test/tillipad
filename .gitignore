@@ -31,3 +31,5 @@ tests/_support/_generated
 
 #vagrant folder
 /.vagrant
+# node modules folder
+/node_modules
