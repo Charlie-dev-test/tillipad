@@ -77,11 +77,13 @@ class SiteController extends Controller
 
     public function actionAjax(){
         if(Yii::$app->request->isAjax) {
-            $id = $_POST['id'];
+            $id = (int)(Yii::$app->request->post('id'));
             $query = City::find();
             $city = $query->where(['city_country_id' => $id])->all();
+            $query = Country::find();
+            $country = $query->where(['id' => $id])->one();
             $this->layout = false;
-            return $this->render('city', compact('city', 'id'));
+            return $this->render('city', compact('city', 'id', 'country'));
         }else return false;
     }
 

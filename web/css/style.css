@@ -1,3 +1,25 @@
 .disabled_country{
     pointer-events: none;
 }
+.city{
+    display: block;
+    margin: 0 50px 20px 50px;
+}
+.country{
+    margin: 4em 50px 20px 50px;
+    display: block;
+}
+
+ul{
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+@media (min-width: 640px) {
+    .city{
+        display: inline-block;
+    }
+    .country{
+        display:inline-block;
+    }
+}

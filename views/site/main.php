@@ -4,7 +4,6 @@
 
 $this->title = 'Главная страница';
 ?>
-<h1>Countries</h1>
 <div class="country">
     <ul>
     <?php foreach ($countries as $country): ?>
@@ -14,6 +13,4 @@ $this->title = 'Главная страница';
     <?php endforeach; ?>
     </ul>
 </div>
-<div class="city">
-
-</div>
+<div class="city"></div>
